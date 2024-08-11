@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazilian Foods Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="icons8-pizza-48.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffcc00;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .featured-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            width: calc(25% - 20px);
+            box-sizing: border-box;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product h4 {
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #ffcc00;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .product {
+                width: calc(33.33% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product {
+                width: calc(100% - 20px);
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+            nav ul {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brazilian Foods Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="swot.html">Swot</a></li>
+                <li><a href="cart.html">Cart</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Our Store</h2>
+            <p>Explore the finest Brazilian foods and bring a taste of Brazil to your home!</p>
+            <h3>Featured Products</h3>
+            <div class="featured-products">
+                <!-- Existing Product Items -->
+                <div class="product">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/receita-de-feijoada.png" alt="Feijoada">
+                    <h4>Feijoada</h4>
+                    <p>A traditional Brazilian stew of black beans with pork or beef.</p>
+                    <p><strong>$15.00</strong></p>
+                    <button onclick="addToCart('Feijoada', 15.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://i1.wp.com/ncultura.pt/wp-content/uploads/2017/11/shutterstock-579999919-e1510831911710.jpg?fit=2000%2C1335&ssl=1" alt="Cheese Bread">
+                    <h4>Pão De Queijo</h4>
+                    <p>Delicious and cheesy bread rolls made from tapioca flour.</p>
+                    <p><strong>$8.00</strong></p>
+                    <button onclick="addToCart('Cheese Bread', 8.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://hankstruebbq.com/wp-content/uploads/2016/06/picanha.jpg" alt="Picanha">
+                    <h4>Picanha</h4>
+                    <p>Brazilian-style beef steak with a rich and savory flavor.</p>
+                    <p><strong>$20.00</strong></p>
+                    <button onclick="addToCart('Picanha', 20.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://files.agoramt.com.br/2019/03/coxinha.jpg" alt="Coxinha">
+                    <h4>Coxinha</h4>
+                    <p>Crispy chicken croquettes with a creamy filling.</p>
+                    <p><strong>$10.00</strong></p>
+                    <button onclick="addToCart('Coxinha', 10.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/990810f9242641a8e264ce996a78ed28_XL.jpg" alt="Pastel">
+                    <h4>Pastel</h4>
+                    <p>Fried pastry filled with various savory fillings.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Pastel', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://receitatodahora.com.br/wp-content/uploads/2015/10/brigadeiro-sem-leite1.jpg" alt="Brigadeiro">
+                    <h4>Brigadeiro</h4>
+                    <p>Sweet chocolate truffles, a Brazilian favorite.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Brigadeiro', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://assets.epicurious.com/photos/579a2d8e437fcffe02f7230b/master/pass/caipirinha-072816.jpg" alt="Caipirinha">
+                    <h4>Caipirinha</h4>
+                    <p>Classic Brazilian cocktail made with cachaça, lime, and sugar.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Caipirinha', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://static01.nyt.com/images/2016/03/16/dining/16MOQUECA/16MOQUECA-superJumbo.jpg" alt="Moqueca">
+                    <h4>Moqueca</h4>
+                    <p>Brazilian seafood stew with coconut milk and palm oil.</p>
+                    <p><strong>$18.00</strong></p>
+                    <button onclick="addToCart('Moqueca', 18.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://img.saborosos.com.br/imagens/quindim.jpg" alt="Quindim">
+                    <h4>Quindim</h4>
+                    <p>A sweet and creamy Brazilian custard dessert.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Quindim', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://premieremedicina.com.br/wp-content/uploads/2015/08/tapioca-scaled-2048x1396.jpg" alt="Tapioca">
+                    <h4>Tapioca</h4>
+                    <p>Brazilian flatbread made from tapioca flour.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Tapioca', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://portaledicase.com/wp-content/uploads/2022/07/shutterstock_1999153562-1024x683.jpg" alt="Empada">
+                    <h4>Empada</h4>
+                    <p>Delicious Brazilian savory pie with a variety of fillings.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Empada', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.aiafood.com/sites/default/files/articles/come_fare_la_polenta.jpg" alt="Polenta">
+                    <h4>Polenta</h4>
+                    <p>Brazilian-style cornmeal dish, crispy on the outside and soft on the inside.</p>
+                    <p><strong>$9.00</strong></p>
+                    <button onclick="addToCart('Polenta', 9.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://emagrecercomvidaesaude.com.br/wp-content/uploads/2021/05/chips-de-banana.jpg" alt="Salgado de Banana">
+                    <h4>Salgado de Banana</h4>
+                    <p>Brazilian savory banana pastries with a flavorful filling.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Salgado de Banana', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://tecnonoticias.com.br/blogs/cozinhafacil/wp-content/uploads/2020/07/arroz-com-pequi-1-1068x644.jpg" alt="Arroz com Pequi">
+                    <h4>Arroz com Pequi</h4>
+                    <p>A traditional Brazilian rice dish with pequi fruit.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Arroz com Pequi', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://i.ytimg.com/vi/pYuizroaW-4/maxresdefault.jpg" alt="Bolinho de Estudante">
+                    <h4>Bolinho de Estudante</h4>
+                    <p>Brazilian student-style fried balls of dough with a savory filling.</p>
+                    <p><strong>$8.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Estudante', 8.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/320b783b13f6b591849dc82b8df81be8_XL.jpg" alt="Mini Pizza Brasileira">
+                    <h4>Mini Pizza Brasileira</h4>
+                    <p>Brazilian-style mini pizzas with a variety of toppings.</p>
+                    <p><strong>$10.00</strong></p>
+                    <button onclick="addToCart('Mini Pizza Brasileira', 10.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.culinariapravaler.com.br/view/site/img/receita/2020/05/bolinho-de-mandioca-de-boteco-com-carne-seca-irresistivel.html.jpg" alt="Bolinho de Mandioca">
+                    <h4>Bolinho de Mandioca</h4>
+                    <p>Fried cassava balls, crispy on the outside and soft on the inside.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Mandioca', 7.00)">Add to Cart</button>
+                </div>
+                <!-- New Product Items -->
+                <div class="product">
+                    <img src="https://www.sorstescouverts-ersbdx.com/content/uploads/2020/11/Bacalhau-a-bras.jpg" alt="Bacalhau à Brás">
+                    <h4>Bacalhau à Brás</h4>
+                    <p>Portuguese-inspired Brazilian dish with shredded codfish, eggs, and onions.</p>
+                    <p><strong>$16.00</strong></p>
+                    <button onclick="addToCart('Bacalhau à Brás', 16.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://acozinhabrasileira.com.br/wp-content/uploads/2021/09/receita-de-tacaca.jpg" alt="Tacacá">
+                    <h4>Tacacá</h4>
+                    <p>A traditional Amazonian soup made with tucupi, jambu, and dried shrimp.</p>
+                    <p><strong>$14.00</strong></p>
+                    <button onclick="addToCart('Tacacá', 14.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/9f7d409dff686d15d6aec4c50a9e8ef5_XL.jpg" alt="Arroz de Pato">
+                    <h4>Arroz de Pato</h4>
+                    <p>Brazilian rice dish cooked with duck, vegetables, and spices.</p>
+                    <p><strong>$19.00</strong></p>
+                    <button onclick="addToCart('Arroz de Pato', 19.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.coisasdaroca.com/wp-content/uploads/2021/02/tropeiro-777x437.jpg" alt="Feijão Tropeiro">
+                    <h4>Feijão Tropeiro</h4>
+                    <p>A hearty bean dish with bacon, sausage, and manioc flour.</p>
+                    <p><strong>$11.00</strong></p>
+                    <button onclick="addToCart('Feijão Tropeiro', 11.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.naturalcookeryschool.com/wp-content/uploads/2019/05/acaraje.jpg" alt="Acarajé">
+                    <h4>Acarajé</h4>
+                    <p>Deep-fried bean cakes filled with shrimp and spicy sauce.</p>
+                    <p><strong>$13.00</strong></p>
+                    <button onclick="addToCart('Acarajé', 13.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/3cc3ea028ec2c5bc49d14fb381a9929f_XL.jpg" alt="Paçoca">
+                    <h4>Paçoca</h4>
+                    <p>A sweet and crumbly peanut treat, popular in Brazilian cuisine.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Paçoca', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/e99cca3cbc010706fcba1d1bd7112857_XL.jpg" alt="Dadinho de Tapioca">
+                    <h4>Dadinho de Tapioca</h4>
+                    <p>Deep-fried tapioca cubes with a crunchy exterior and soft interior.</p>
+                    <p><strong>$9.00</strong></p>
+                    <button onclick="addToCart('Dadinho de Tapioca', 9.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://anamariabraga.globo.com/wp-content/uploads/2019/08/como-aproveitar-sobras-de-arroz-e-feijao.jpg" alt="Feijão com Arroz">
+                    <h4>Feijão com Arroz</h4>
+                    <p>A classic Brazilian dish of rice and beans, a staple in Brazilian homes.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Feijão com Arroz', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.rigomel.com.br/img_bd/receitas/115/2/palmito-pupunha.jpg" alt="Palmito de Pupunha">
+                    <h4>Palmito de Pupunha</h4>
+                    <p>Delicate heart of palm from the pupunha tree, perfect for salads and appetizers.</p>
+                    <p><strong>$11.00</strong></p>
+                    <button onclick="addToCart('Palmito de Pupunha', 11.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://s.glbimg.com/po/rc/media/2016/01/23/10_17_51_175_bolinho_de_arroz.jpg" alt="Bolinho de Arroz">
+                    <h4>Bolinho de Arroz</h4>
+                    <p>Fried rice balls, a crispy and savory treat made from leftover rice.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Arroz', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.dicasonline.com/wp-content/uploads/bolinho-de-feijao.jpg" alt="Bolinho de Feijão">
+                    <h4>Bolinho de Feijão</h4>
+                    <p>Crispy black bean fritters, a delightful Brazilian snack.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Feijão', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.marolacomcarambola.com.br/wp-content/uploads/2015/06/receita-de-canjica-1.jpg" alt="Canjica">
+                    <h4>Canjica</h4>
+                    <p>Sweet Brazilian dish made from hominy corn cooked with milk, sugar, and spices.</p>
+                    <p><strong>$8.00</strong></p>
+                    <button onclick="addToCart('Canjica', 8.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://receitasnotadez.com.br/wp-content/uploads/2020/02/ensopado-de-peixe-a-portuguesa.jpg" alt="Peixada">
+                    <h4>Peixada</h4>
+                    <p>Brazilian fish stew with vegetables and spices.</p>
+                    <p><strong>$17.00</strong></p>
+                    <button onclick="addToCart('Peixada', 17.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://s2.glbimg.com/K8OwZ9N2sE5DJltr-CALvxFBXNw=/0x0:633x391/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2015/09/22/10_19_02_409_Pudim.png" alt="Pudim de Leite">
+                    <h4>Pudim de Leite</h4>
+                    <p>A rich and creamy Brazilian caramel flan dessert.</p>
+                    <p><strong>$9.00</strong></p>
+                    <button onclick="addToCart('Pudim de Leite', 9.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://blog.amigofoods.com/wp-content/uploads/2021/01/chocolate-bolo-de-rolo-1024x683.jpg" alt="Bolo de Rolo">
+                    <h4>Bolo de Rolo</h4>
+                    <p>A Brazilian sponge cake roll filled with guava paste, a sweet treat from Pernambuco.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Bolo de Rolo', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://receitaculinaria.com.br/wp-content/uploads/2021/09/como-fazer-a-melhor-panqueca-do.jpg" alt="Panqueca Brasileira">
+                    <h4>Panqueca Brasileira</h4>
+                    <p>Brazilian-style pancakes stuffed with savory fillings like ground beef or cheese.</p>
+                    <p><strong>$9.00</strong></p>
+                    <button onclick="addToCart('Panqueca Brasileira', 9.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://folhago.com.br/blogs/receitas-faceis/wp-content/uploads/2021/02/Bolinho-de-milho-assado.jpg" alt="Bolinho de Milho">
+                    <h4>Bolinho de Milho</h4>
+                    <p>Sweet corn fritters, crispy on the outside and soft on the inside.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Milho', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://celeirodobrasil.com.br/wp-content/uploads/2018/06/144983_original.jpg" alt="Galinhada">
+                    <h4>Galinhada</h4>
+                    <p>A hearty Brazilian chicken and rice dish cooked with vegetables and spices.</p>
+                    <p><strong>$15.00</strong></p>
+                    <button onclick="addToCart('Galinhada', 15.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://conteudo.imguol.com.br/c/noticias/18/2016/08/30/copo-de-acai-da-franquia-acai-villa-roxa-1472569841962_1920x1490.png" alt="Açaí Bowl">
+                    <h4>Açaí Bowl</h4>
+                    <p>Delicious and refreshing açaí berry smoothie bowl, topped with granola and fresh fruits.</p>
+                    <p><strong>$9.00</strong></p>
+                    <button onclick="addToCart('Açaí Bowl', 9.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/1b6069f7031f5df88e14909413a02435_XL.jpg" alt="Bolo de Fubá">
+                    <h4>Bolo de Fubá</h4>
+                    <p>Traditional Brazilian cornmeal cake, sweet and moist.</p>
+                    <p><strong>$8.00</strong></p>
+                    <button onclick="addToCart('Bolo de Fubá', 8.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.guiadasemana.com.br/contentFiles/system/pictures/2016/5/160886/original/pe-de-moleque.jpg" alt="Pé de Moleque">
+                    <h4>Pé de Moleque</h4>
+                    <p>Crunchy and sweet Brazilian peanut candy.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Pé de Moleque', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://diarioroatan.com/wp-content/uploads/2017/07/Agua-de-Coco-y-sus-super-Beneficios-para-la-Salud.-7.jpg" alt="Água de Coco">
+                    <h4>Água de Coco</h4>
+                    <p>Refreshing coconut water, perfect for hydration.</p>
+                    <p><strong>$4.00</strong></p>
+                    <button onclick="addToCart('Água de Coco', 4.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://marolacomcarambola.com.br/wp-content/uploads/2020/06/receita-de-batata-doce-recheada-com-frango-cremoso-16.jpg" alt="Batata Doce">
+                    <h4>Batata Doce</h4>
+                    <p>Sweet potato, a versatile and nutritious root vegetable.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Batata Doce', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://s2.glbimg.com/fh3oNHxm3q9ig8YzKycRlG9A6Vg=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2021/K/1/JVAyknTbWBb7PyBUYkTA/frame-pamonha.jpg" alt="Pamonha">
+                    <h4>Pamonha</h4>
+                    <p>Brazilian corn dish wrapped in corn husks, sweet or savory.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Pamonha', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://mixologynews.com.br/wp-content/uploads/2017/06/quent%C3%A3o-1.jpg" alt="Quentão">
+                    <h4>Quentão</h4>
+                    <p>Hot Brazilian spiced wine, perfect for cold nights.</p>
+                    <p><strong>$10.00</strong></p>
+                    <button onclick="addToCart('Quentão', 10.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://folhago.com.br/blogs/receitas-faceis/wp-content/uploads/2021/01/arroz-doce-com-leite-condensado-1.jpg" alt="Arroz Doce">
+                    <h4>Arroz Doce</h4>
+                    <p>Sweet Brazilian rice pudding, creamy and delicious.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Arroz Doce', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.guiadasemana.com.br/contentFiles/system/pictures/2016/6/163109/original/cocada.jpg" alt="Cocada">
+                    <h4>Cocada</h4>
+                    <p>Sweet coconut candy, a traditional Brazilian treat.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Cocada', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://minervafoods.com/wp-content/uploads/2022/12/vaca-atolada.jpg" alt="Vaca Atolada">
+                    <h4>Vaca Atolada</h4>
+                    <p>Brazilian beef stew with cassava, hearty and flavorful.</p>
+                    <p><strong>$14.00</strong></p>
+                    <button onclick="addToCart('Vaca Atolada', 14.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.maisreceitas.com/wp-content/upload/2013/08/fotos-tutu-de-feijao-685745.jpg" alt="Tutu de Feijão">
+                    <h4>Tutu de Feijão</h4>
+                    <p>Brazilian dish made with beans, pork, and spices.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Tutu de Feijão', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://img.bekiacocina.com/cocina/0000/240-h.jpg" alt="Farofa">
+                    <h4>Farofa</h4>
+                    <p>Brazilian side dish made with manioc flour and spices.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Farofa', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://assets.unileversolutions.com/recipes-v2/54519.jpg" alt="Baixão de Dois">
+                    <h4>Baixão de Dois</h4>
+                    <p>Traditional Brazilian dish with rice, beans, and meat.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Baixão de Dois', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/48ed12281ae1f6453d2d5ec95b17e082_XL.jpg" alt="Biscoito de Polvilho">
+                    <h4>Biscoito de Polvilho</h4>
+                    <p>Crispy and airy Brazilian cheese puffs.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Biscoito de Polvilho', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://cdn.brazil-selection.com/wp-content/uploads/2021/12/bobo-de-camarao-slide-scaled.jpeg" alt="Bobó de Camarão">
+                    <h4>Bobó de Camarão</h4>
+                    <p>Delicious shrimp stew with manioc and coconut milk.</p>
+                    <p><strong>$16.00</strong></p>
+                    <button onclick="addToCart('Bobó de Camarão', 16.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://moinhoglobo.com.br/wp-content/uploads/2020/01/11-bolinho-de-chuva.jpg" alt="Bolinho de Chuva">
+                    <h4>Bolinho de Chuva</h4>
+                    <p>Brazilian fried doughnuts, perfect with coffee.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Bolinho de Chuva', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/Receitas-de-carne-de-sol-1-730x449.jpg" alt="Carne de Sol">
+                    <h4>Carne de Sol</h4>
+                    <p>Brazilian sun-dried beef, flavorful and tender.</p>
+                    <p><strong>$15.00</strong></p>
+                    <button onclick="addToCart('Carne de Sol', 15.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.guiadasemana.com.br/contentFiles/image/2021/04/FEA/67066_shutterstock-1791781454.jpg" alt="Churrasco">
+                    <h4>Churrasco</h4>
+                    <p>Brazilian barbecue with various cuts of meat, grilled to perfection.</p>
+                    <p><strong>$20.00</strong></p>
+                    <button onclick="addToCart('Churrasco', 20.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://i.ytimg.com/vi/A8RdwfBUfmU/maxresdefault.jpg" alt="Doce de Leite">
+                    <h4>Doce de Leite</h4>
+                    <p>Sweet caramelized milk spread, a Brazilian favorite.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Doce de Leite', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://capitalist.com.br/wp-content/uploads/2023/07/caldo-de-cana-1000x600.jpg" alt="Caldo de Cana">
+                    <h4>Caldo de Cana</h4>
+                    <p>Sweet sugarcane juice, refreshing and naturally sweet.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Caldo de Cana', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://diarioprime.com.br/vida-de-casa/wp-content/uploads/2022/04/Design-sem-nome-11.jpg" alt="Feijão Verde">
+                    <h4>Feijão Verde</h4>
+                    <p>Green beans, a fresh and healthy side dish.</p>
+                    <p><strong>$4.00</strong></p>
+                    <button onclick="addToCart('Feijão Verde', 4.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.saboresajinomoto.com.br/uploads/images/recipes/frango-com-quiabo-1.jpg" alt="Frango com Quiabo">
+                    <h4>Frango com Quiabo</h4>
+                    <p>Chicken stew with okra, a savory Brazilian dish.</p>
+                    <p><strong>$12.00</strong></p>
+                    <button onclick="addToCart('Frango com Quiabo', 12.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://docepedia.com/wp-content/uploads/2022/11/goiabada-cascao-g.jpg" alt="Goiabada">
+                    <h4>Goiabada</h4>
+                    <p>Sweet guava paste, often enjoyed with cheese.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Goiabada', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://www.blog.bioritmo.com.br/wp-content/uploads/2021/06/shutterstock_245953117-1-1068x712.jpg" alt="Pinhão">
+                    <h4>Pinhão</h4>
+                    <p>Edible seeds from the pine tree, roasted and delicious.</p>
+                    <p><strong>$7.00</strong></p>
+                    <button onclick="addToCart('Pinhão', 7.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://ervagaucha.com.br/wp-content/uploads/2020/06/chimarrao.jpg" alt="Chimarrão">
+                    <h4>Chimarrão</h4>
+                    <p>Traditional Brazilian yerba mate tea, served hot in a gourd.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Chimarrão', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://i.ytimg.com/vi/dQMguFYPGYM/maxresdefault.jpg" alt="Quebra-Queixo">
+                    <h4>Quebra-Queixo</h4>
+                    <p>Crunchy and sweet Brazilian candy made with coconut.</p>
+                    <p><strong>$6.00</strong></p>
+                    <button onclick="addToCart('Quebra-Queixo', 6.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://naminhapanela.com/wp-content/uploads/2021/04/Beijinho-de-coco-4.jpg" alt="Beijinho">
+                    <h4>Beijinho</h4>
+                    <p>Sweet coconut truffles, similar to Brigadeiro but with coconut.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Beijinho', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://assets.unileversolutions.com/recipes-v2/177433.jpg" alt="Rabada">
+                    <h4>Rabada</h4>
+                    <p>Beef tail stew, a rich and flavorful Brazilian dish.</p>
+                    <p><strong>$18.00</strong></p>
+                    <button onclick="addToCart('Rabada', 18.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://webrun.com.br/wp-content/uploads/2019/11/Rapadura_de_Boa_Hora-PI-1200x646.jpg" alt="Rapadura">
+                    <h4>Rapadura</h4>
+                    <p>Unrefined cane sugar, commonly used in Brazilian sweets.</p>
+                    <p><strong>$4.00</strong></p>
+                    <button onclick="addToCart('Rapadura', 4.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://mercatoverde.com.br/wp-content/uploads/2021/05/Geleia-de-morango.png" alt="Geleia">
+                    <h4>Geleia</h4>
+                    <p>Brazilian fruit jelly, sweet and perfect for spreading on bread.</p>
+                    <p><strong>$5.00</strong></p>
+                    <button onclick="addToCart('Geleia', 5.00)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="https://2.bp.blogspot.com/_OfYYlOGGnDk/TNVWrSdHlrI/AAAAAAAAB34/H4A2jIQD-8w/s1600/Vatap%C3%A1.jpg" alt="Vatapá">
+                    <h4>Vatapá</h4>
+                    <p>Brazilian seafood dish with bread, shrimp, and coconut milk.</p>
+                    <p><strong>$16.00</strong></p>
+                    <button onclick="addToCart('Vatapá', 16.00)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + ' has been added to your cart.');
+        }
+    </script>
+</body>
+</html>
